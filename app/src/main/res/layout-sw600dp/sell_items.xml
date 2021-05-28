@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/black_border"
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/image"
+            android:src="@drawable/black_border"
+            android:layout_width="@dimen/square"
+            android:layout_height="@dimen/square"/>
+
+        <ImageView
+            android:id="@+id/delete"
+            android:src="@drawable/delete_items"
+            android:layout_width="@dimen/backPress"
+            android:layout_height="@dimen/backPress"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="4"
+        android:orientation="vertical">
+        <LinearLayout
+            android:weightSum="2"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/EmailText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:text="Name : " />
+            <TextView
+                android:id="@+id/name"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/EmailText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="item" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:weightSum="2"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/EmailText"
+                android:textColor="@color/black"
+                android:text="Quantity : "/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/minus"
+                    android:src="@drawable/minus"
+                    android:layout_marginEnd="20dp"
+                    android:layout_width="@dimen/plus"
+                    android:layout_gravity="center"
+                    android:layout_height="@dimen/plus"/>
+                <TextView
+                    android:id="@+id/quantity"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/EmailText"
+                    android:text="5"/>
+                <ImageView
+                    android:id="@+id/plus"
+                    android:layout_gravity="center"
+                    android:src="@drawable/plus"
+                    android:layout_marginStart="20dp"
+                    android:layout_width="@dimen/plus"
+                    android:layout_height="@dimen/plus"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:weightSum="2"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/EmailText"
+                android:textColor="@color/black"
+                android:text="Price : "/>
+            <TextView
+                android:id="@+id/item_price"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/EmailText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="2.00 $"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:weightSum="2"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Total : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/EmailText" />
+            <TextView
+                android:layout_weight="1"
+                android:id="@+id/total_price"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/EmailText"
+                android:text="10.00 $" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

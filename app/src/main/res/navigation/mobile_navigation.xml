@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.ez_store.ez_store.View.ui.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+            android:id="@+id/nav_myProfile"
+            android:name="com.ez_store.ez_store.View.ui.MyProfileFragment"
+            tools:layout="@layout/fragment_my_profile" />
+    <fragment
+            android:id="@+id/nav_termsAndConditions"
+            android:name="com.ez_store.ez_store.View.ui.TermsAndConditionsFragment"
+            tools:layout="@layout/fragment_terms_and_conditions" />
+    <fragment
+            android:id="@+id/nav_help"
+            android:name="com.ez_store.ez_store.View.ui.HelpFragment"
+            tools:layout="@layout/fragment_help" />
+    <fragment
+            android:id="@+id/nav_rateUs"
+            android:name="com.ez_store.ez_store.View.ui.RateFragment"
+            tools:layout="@layout/fragment_rate" />
+
+</navigation>

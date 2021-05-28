@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightGreen"
+    tools:context=".View.PhoneVerification">
+
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="@dimen/LogoSize"
+        android:layout_height="@dimen/LogoSize"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ezstorelogo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dancing_script_bold"
+        android:gravity="center"
+        android:text="verification\ncode"
+        android:textColor="@color/darkGreen"
+        android:textSize="@dimen/verification_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Logo"
+        app:layout_constraintVertical_bias="0.356" />
+
+    <TextView
+        android:id="@+id/message1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/EnterCodeText"
+        android:textColor="@color/black"
+        android:textSize="@dimen/phoneNumber"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.034" />
+
+    <TextView
+        android:id="@+id/user_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="+962"
+        android:textColor="@color/black"
+        android:textSize="@dimen/phoneNumber"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message1"
+        app:layout_constraintVertical_bias="0.01" />
+
+    <com.chaos.view.PinView
+        android:id="@+id/pinView"
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:cursorVisible="true"
+        android:inputType="number"
+        android:textColor="@color/darkGreen"
+        app:cursorColor="@color/white"
+        app:hideLineWhenFilled="true"
+        app:itemCount="6"
+        app:itemRadius="5dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_phone"
+        app:layout_constraintVertical_bias="0.043"
+        app:lineColor="@color/darkGreen"
+        app:lineWidth="2dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Verify_Button"
+        android:layout_width="@dimen/LoginButtonWidth"
+        android:layout_height="@dimen/LoginButtonHeight"
+        android:background="@drawable/login_button_animation"
+        android:onClick="Verify"
+        android:text="@string/codeVerificationButton"
+        android:textColor="@color/white"
+        android:textSize="@dimen/LoginButtonText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pinView"
+        app:layout_constraintVertical_bias="0.143" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Send_Button"
+        android:layout_width="@dimen/LoginButtonWidth"
+        android:layout_height="@dimen/LoginButtonHeight"
+        android:background="@drawable/login_button_animation"
+        android:onClick="sendButton"
+        android:text="@string/SendCode"
+        android:textColor="@color/white"
+        android:textSize="@dimen/LoginButtonText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Verify_Button"
+        app:layout_constraintVertical_bias="0.192" />
+
+    <TextView
+        android:id="@+id/wrongPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:contextClickable="true"
+        android:focusable="true"
+        android:onClick="wrongPhone"
+        android:text="@string/wrongPhone"
+        android:textColor="@color/black"
+        android:textSize="@dimen/phoneNumber"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Send_Button"
+        app:layout_constraintVertical_bias="0.219" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

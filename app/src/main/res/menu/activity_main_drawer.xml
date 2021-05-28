@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_myProfile"
+            android:icon="@drawable/my_profile"
+            android:title="@string/menu_myProfile" />
+        <item
+            android:id="@+id/nav_termsAndConditions"
+            android:icon="@drawable/terms_and_conditions"
+            android:title="@string/menu_termsAndConditions" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_baseline_help_outline_24"
+            android:title="@string/menu_help" />
+        <item
+            android:id="@+id/nav_rateUs"
+            android:icon="@drawable/rate"
+            android:title="@string/menu_rate" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout"
+            android:title="@string/menu_logout" />
+    </group>
+</menu>

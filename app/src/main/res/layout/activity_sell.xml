@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/lightGreen"
+        tools:context=".View.SellActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/cashier"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Cashier : Zaid Daoud"
+                android:textColor="@color/black"
+                android:textSize="@dimen/EmailText" />
+            <TextView
+                android:id="@+id/date"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Date : dd/mm/yyyy"
+                android:textColor="@color/black"
+                android:textSize="@dimen/EmailText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/customer"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:text="Customer : Zaid Daoud"
+                android:textColor="@color/black"
+                android:textSize="@dimen/EmailText" />
+            <TextView
+                android:id="@+id/time"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Time : H/M/S"
+
+                android:textColor="@color/black"
+                android:textSize="@dimen/EmailText" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/items"
+                android:layout_width="match_parent"
+                android:layout_margin ="10dp"
+                android:layout_height="@dimen/scheduleHeight"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/add_item"
+                android:layout_width="@dimen/backPress"
+                android:layout_height="@dimen/backPress"
+                android:background="@drawable/add_items"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.956"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.892" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/total_price"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Total : 0"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/EmailText" />
+
+            <TextView
+                android:id="@+id/total_quantity"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Quantity : 0"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/EmailText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/sell"
+                android:layout_weight="1"
+                android:layout_margin="20dp"
+                android:layout_width="@dimen/LoginButtonWidth"
+                android:layout_height="@dimen/LoginButtonHeight"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/darkGreen"
+                android:text="Sell"
+                android:textSize="@dimen/LoginButtonText"/>
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_weight="1"
+                android:layout_margin="20dp"
+                android:layout_width="@dimen/LoginButtonWidth"
+                android:layout_height="@dimen/LoginButtonHeight"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/darkGreen"
+                android:text="Cancel"
+                android:textSize="@dimen/LoginButtonText" />
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

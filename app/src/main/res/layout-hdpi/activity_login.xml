@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/darkgreenbackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/Phone_Number"
+        android:layout_width="@dimen/LoginInputWidth"
+        android:layout_height="@dimen/LoginInputHeight"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        android:visibility="gone"
+        app:layout_constraintVertical_bias="0.2">
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/CountryCode"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/ccp"
+            android:gravity="center"
+            android:textDirection="rtl"
+            app:ccp_autoDetectCountry="false"
+            app:ccp_contentColor="@color/black"
+            app:ccp_defaultPhoneCode="962"
+            app:ccp_showNameCode="true"
+            app:ccp_textSize="@dimen/EmailText" />
+
+        <EditText
+            android:id="@+id/Phone_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@drawable/phoneinput"
+            android:ems="10"
+            android:hint="@string/PhoneText"
+            android:inputType="phone"
+            android:paddingLeft="15dp"
+            android:textSize="@dimen/EmailText" />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="@dimen/LogoSize"
+        android:layout_height="@dimen/LogoSize"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ezstorelogo" />
+
+    <EditText
+        android:id="@+id/Login_Email"
+        android:layout_width="@dimen/LoginInputWidth"
+        android:layout_height="@dimen/LoginInputHeight"
+        android:background="@drawable/input"
+        android:ems="10"
+        android:hint="@string/Email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="15dp"
+        android:textSize="@dimen/EmailText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Login_Password"
+        android:layout_width="@dimen/LoginInputWidth"
+        android:layout_height="@dimen/LoginInputHeight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:passwordToggleEnabled="true"
+        app:layout_constraintTop_toBottomOf="@+id/Login_Email"
+        app:layout_constraintVertical_bias="0.075"
+        app:passwordToggleDrawable="@drawable/custom_password_eye"
+        app:passwordToggleTint="@color/darkGreen">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Login_Password_Text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/input"
+            android:ems="10"
+            android:hint="@string/Password"
+            android:inputType="textPassword"
+            android:paddingLeft="15dp"
+            android:textSize="@dimen/EmailText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Login_Button"
+        android:layout_width="@dimen/LoginButtonWidth"
+        android:layout_height="@dimen/LoginButtonHeight"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/login_button_animation"
+        android:onClick="login"
+        android:text="@string/LoginButton"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/LoginButtonText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.613" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Back_Button"
+        android:layout_width="@dimen/backPress"
+        android:layout_height="@dimen/backPress"
+        android:background="@drawable/on_back_animation"
+        android:onClick="backToSplash"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/LoginByIcon"
+        android:layout_width="@dimen/backPress"
+        android:layout_height="@dimen/backPress"
+        android:background="@drawable/use_phone_animation"
+        android:onClick="loginBy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.575"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Login_Button"
+        app:layout_constraintVertical_bias="0.389" />
+
+    <CheckBox
+        android:id="@+id/RememberMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:buttonTint="@color/white"
+        android:text="@string/RememberMeText"
+        android:textColor="@color/white"
+        android:textSize="@dimen/EmailText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Login_Password"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/Use_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Use"
+        android:textColor="@color/white"
+        android:textSize="@dimen/UseTextSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.418"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Login_Button"
+        app:layout_constraintVertical_bias="0.413" />
+</androidx.constraintlayout.widget.ConstraintLayout>

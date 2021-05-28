@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "131475402666",
+    "firebase_url": "https://ez-store-9f8d8-default-rtdb.firebaseio.com",
+    "project_id": "ez-store-9f8d8",
+    "storage_bucket": "ez-store-9f8d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131475402666:android:5631063928ba2a27c805d3",
+        "android_client_info": {
+          "package_name": "com.ez_store.ez_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "131475402666-i791v68jddg9o9cph97qkntnt2hh22bp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ez_store.ez_store",
+            "certificate_hash": "f8de1d466b136da54ef41b66c3eee8a8dce0503b"
+          }
+        },
+        {
+          "client_id": "131475402666-gfdk7b4ka6s1i79l9jq9co9ft9e77d64.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBva6jv3gq4iREpuG9qi3GaBvsJTtBDTsc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "131475402666-gfdk7b4ka6s1i79l9jq9co9ft9e77d64.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

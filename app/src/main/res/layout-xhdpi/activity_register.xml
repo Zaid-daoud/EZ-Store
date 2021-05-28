@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/darkgreenbackground"
+    tools:context=".View.RegisterActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Register_Button"
+        android:layout_width="@dimen/LoginButtonWidth"
+        android:layout_height="@dimen/LoginButtonHeight"
+        android:background="@drawable/login_button_animation"
+        android:onClick="Register"
+        android:text="@string/RegisterButton"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/LoginButtonText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintVertical_bias="0.194" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Back_Button"
+        android:layout_width="@dimen/backPress"
+        android:layout_height="@dimen/backPress"
+        android:background="@drawable/on_back_animation"
+        android:onClick="backToSplash"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/LogoSize"
+        android:layout_height="@dimen/LogoSize"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ezstorelogo" />
+
+    <EditText
+        android:id="@+id/Register_Name"
+        android:layout_width="@dimen/LoginInputWidth"
+        android:layout_height="@dimen/LoginInputHeight"
+        android:background="@drawable/input"
+        android:ems="10"
+        android:hint="@string/Name"
+        android:inputType="text"
+        android:paddingLeft="15dp"
+        android:textSize="@dimen/EmailText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.357" />
+
+    <EditText
+        android:id="@+id/Register_Email"
+        android:layout_width="@dimen/LoginInputWidth"
+        android:layout_height="@dimen/LoginInputHeight"
+        android:background="@drawable/input"
+        android:ems="10"
+        android:hint="@string/Email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="15dp"
+        android:textSize="@dimen/EmailText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Register_Name"
+        app:layout_constraintVertical_bias="0.02" />
+
+    <LinearLayout
+        android:id="@+id/Phone_Number"
+        android:layout_width="@dimen/LoginInputWidth"
+        android:layout_height="@dimen/LoginInputHeight"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Register_Email"
+        app:layout_constraintVertical_bias="0.02">
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/CountryCode"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/ccp"
+            android:gravity="center"
+            android:textDirection="rtl"
+            app:ccp_autoDetectCountry="false"
+            app:ccp_contentColor="@color/black"
+            app:ccp_defaultPhoneCode="962"
+            app:ccp_showNameCode="true"
+            app:ccp_textSize="@dimen/EmailText" />
+
+        <EditText
+            android:id="@+id/Phone_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@drawable/phoneinput"
+            android:ems="10"
+            android:hint="@string/PhoneText"
+            android:inputType="phone"
+            android:paddingLeft="15dp"
+            android:textSize="@dimen/EmailText" />
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Register_Password"
+        android:layout_width="@dimen/LoginInputWidth"
+        android:layout_height="@dimen/LoginInputHeight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Phone_Number"
+        app:layout_constraintVertical_bias="0.02"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleDrawable="@drawable/custom_password_eye"
+        app:passwordToggleTint="@color/darkGreen">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Register_Password_Text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/input"
+            android:ems="10"
+            android:hint="@string/Password"
+            android:inputType="textPassword"
+            android:paddingLeft="15dp"
+            android:textSize="@dimen/EmailText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Register_Confirm_Password"
+        android:layout_width="@dimen/LoginInputWidth"
+        android:layout_height="@dimen/LoginInputHeight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Register_Password"
+        app:layout_constraintVertical_bias="0.02"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleDrawable="@drawable/custom_password_eye"
+        app:passwordToggleTint="@color/darkGreen">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Register_Confirm_Password_Text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/input"
+            android:ems="10"
+            android:hint="@string/ConfirmPassword"
+            android:inputType="textPassword"
+            android:paddingLeft="15dp"
+            android:textSize="@dimen/EmailText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Register_Confirm_Password"
+        app:layout_constraintVertical_bias="0.05" >
+
+        <RadioButton
+            android:id="@+id/AdminRadioButton"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/EmailText"
+            android:buttonTint="@color/darkGreen"
+            android:text="@string/Owner" />
+
+        <RadioButton
+            android:id="@+id/EmployeeRadioButton"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/EmailText"
+            android:textIsSelectable="true"
+            android:buttonTint="@color/darkGreen"
+            android:text="@string/Employee" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

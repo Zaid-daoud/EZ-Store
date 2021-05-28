@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".View.MyEmployeesActivity">
+
+    <LinearLayout
+        android:id="@+id/Phone_Number"
+        android:layout_width="@dimen/LoginInputWidth"
+        android:layout_height="@dimen/LoginInputHeight"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:layout_gravity="center">
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/countryCode"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/ccp"
+            android:gravity="center"
+            android:textDirection="rtl"
+            app:ccp_autoDetectCountry="false"
+            app:ccp_contentColor="@color/black"
+            app:ccp_defaultPhoneCode="962"
+            app:ccp_showNameCode="true"
+            app:ccp_textSize="@dimen/EmailText" />
+
+        <EditText
+            android:id="@+id/phone_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@drawable/phoneinput"
+            android:ems="10"
+            android:hint="@string/PhoneText"
+            android:inputType="phone"
+            android:paddingLeft="15dp"
+            android:textSize="@dimen/EmailText" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/AddEmployee"
+        android:layout_width="@dimen/LoginButtonWidth"
+        android:layout_height="wrap_content"
+        android:text="@string/add_employee"
+        android:textSize="@dimen/EmailText"
+        android:textColor="@color/black"
+        android:background="@drawable/login_button_animation"
+        android:layout_gravity="center"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/myEmployees"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

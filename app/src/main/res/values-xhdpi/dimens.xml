@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Login Page-->
+    <dimen name="LogoSize">225dp</dimen>
+    <dimen name="LoginInputWidth">325dp</dimen>
+    <dimen name="LoginInputHeight">50dp</dimen>
+    <dimen name="backPress">40dp</dimen>
+    <dimen name="EmailText">14sp</dimen>
+    <dimen name="LoginButtonWidth">130dp</dimen>
+    <dimen name="LoginButtonHeight">50dp</dimen>
+    <dimen name="UseTextSize">16sp</dimen>
+    <dimen name="LoginButtonText">18sp</dimen>
+
+
+    <!--Manage Permissions-->
+    <dimen name="permissionName">16sp</dimen>
+    <dimen name="employeeName">30sp</dimen>
+
+    <!--My Permissions-->
+    <dimen name="phone_icon">100dp</dimen>
+    <dimen name="noPermissions">22dp</dimen>
+
+    <!--phone verification-->
+    <dimen name="verification_size">40sp</dimen>
+    <dimen name="phoneNumber">16sp</dimen>
+
+    <!--activity sell-->
+    <dimen name="scheduleHeight">400dp</dimen>
+
+
+    <!--splash-->
+    <dimen name="SplashLoginText">30sp</dimen>
+    <dimen name="SplashLoginSize">175dp</dimen>
+
+    <!--sell items-->
+    <dimen name="square">60dp</dimen>
+    <dimen name="plus">24dp</dimen>
+
+
+    <dimen name="WrongPhoneText">14sp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+
+    <dimen name="toolbar_elevation">4dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+</resources>

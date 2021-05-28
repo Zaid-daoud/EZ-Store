@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/lightYellow"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/abril_fatface"
+        android:text="Enter the required quantity of this item"
+        android:textColor="@color/black"
+        android:textSize="@dimen/EmailText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068" />
+
+
+    <EditText
+        android:id="@+id/quantity"
+        android:layout_width="@dimen/LoginInputWidth"
+        android:layout_height="@dimen/LoginInputHeight"
+        android:layout_margin="20dp"
+        android:background="@drawable/input"
+        android:fontFamily="@font/abril_fatface"
+        android:gravity="center"
+        android:hint="Quantity"
+        android:textColor="@color/black"
+        android:textSize="@dimen/EmailText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.166" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Done"
+        android:layout_width="@dimen/LoginButtonWidth"
+        android:layout_height="@dimen/LoginButtonHeight"
+        android:background="@drawable/login_button_animation"
+        android:fontFamily="@font/dancing_script_bold"
+        android:gravity="center"
+        android:text="Done"
+        android:layout_margin="20dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/LoginButtonText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quantity"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

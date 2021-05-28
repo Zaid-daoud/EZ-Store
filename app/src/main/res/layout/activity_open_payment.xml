@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="#FAE6E6E6"
+    android:orientation="vertical"
+    tools:context=".View.OpenPayment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+
+            android:background="@drawable/top_namefile"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginLeft="22dp"
+                android:src="@drawable/back_icon">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Payment"
+                android:textStyle="bold"
+                android:layout_marginTop="18dp"
+                android:layout_marginLeft="60dp"
+
+                android:textSize="32dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:gravity="center"
+
+
+            android:background="#FACDC9C9"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+
+
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+
+
+
+                android:orientation="horizontal"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="$10 A month"
+                android:gravity="center"
+                android:textSize="22dp"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/payer_name"
+                    android:layout_width="322dp"
+                    android:textAlignment="center"
+                    android:layout_height="30dp"
+                    android:textColor="@color/black"
+                    android:background="@android:drawable/editbox_background"
+                    android:hint="@string/your_full_name"
+                    android:textColorHint="#C8C0C0"
+                    android:inputType="textPersonName"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2">
+
+                </EditText>
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/bank_account"
+                    android:layout_width="322dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="#C8C0C0"
+                    android:layout_height="30dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:hint="Bank Account NO"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2">
+
+                </EditText>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/amount"
+                    android:layout_width="322dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:layout_height="30dp"
+                    android:textColorHint="#C8C0C0"
+                    android:background="@android:drawable/editbox_background"
+                    android:hint="Enter Amount to pay"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2">
+
+                </EditText>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/purpose"
+                    android:layout_width="322dp"
+                    android:textAlignment="center"
+                    android:layout_height="30dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#C8C0C0"
+                    android:background="@android:drawable/editbox_background"
+                    android:hint="Purpose of Payment"
+                    android:inputType="text"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2">
+
+                </EditText>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/mobile_no"
+                    android:layout_width="322dp"
+                    android:textAlignment="center"
+                    android:layout_height="30dp"
+                    android:textColorHint="#C8C0C0"
+                    android:textColor="@color/black"
+                    android:background="@android:drawable/editbox_background"
+                    android:hint="Enter Mobile Number"
+                    android:inputType="phone"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2">
+
+                </EditText>
+
+
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/backBtn"
+                android:layout_width="330dp"
+                android:background="@drawable/pay_btn_background"
+                android:text="Make Payment"
+                android:onClick="MakePayment"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/white"
+
+
+                android:layout_height="wrap_content">
+
+            </Button>
+
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+</LinearLayout>
