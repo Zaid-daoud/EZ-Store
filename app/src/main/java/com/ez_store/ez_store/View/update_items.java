@@ -57,8 +57,7 @@ public class update_items extends AppCompatActivity {
 
     private void update(){
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Person");
-        reference.child(auth.getCurrentUser().getUid()).child("Products").child(String.valueOf(Integer.parseInt(TVResult.getText().toString().trim())));
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Person").child(auth.getCurrentUser().getUid()).child("Products").child(String.valueOf(Integer.parseInt(TVResult.getText().toString().trim())));
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -70,9 +69,7 @@ public class update_items extends AppCompatActivity {
                 intent.putExtra("Quantity", String.valueOf(snapshot.child("quantity").getValue(int.class)));
                 intent.putExtra("Price", String.valueOf(snapshot.child("price").getValue(double.class)));
 
-                String date = snapshot.child("expiredDate").child("day").getValue(int.class).toString();
-                date += "/"+snapshot.child("expiredDate").child("month").getValue(int.class).toString();
-                date += "/"+snapshot.child("expiredDate").child("year").getValue(int.class).toString();
+                String date = snapshot.child("expiredDate").getValue(String.class);
                 intent.putExtra("ExpiredDate", date);
                 startActivity(intent);
             }

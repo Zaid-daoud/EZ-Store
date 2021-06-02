@@ -68,17 +68,7 @@
 
             />
 
-        <EditText
-            android:id="@+id/id_name"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/border"
-            android:backgroundTint="@color/white"
-            android:hint="Enter Item Name"
-            android:paddingLeft="11dp"
-            android:inputType="number"
-            android:textColor="@color/darkGreen" />
+
 
 
         <EditText
@@ -93,17 +83,6 @@
             android:inputType="number"
             android:textColor="@color/darkGreen" />
 
-        <EditText
-            android:id="@+id/id_date"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/border"
-            android:backgroundTint="@color/white"
-            android:hint="Enter Expiration Date"
-            android:inputType="date"
-            android:paddingLeft="11dp"
-            android:textColor="@color/darkGreen" />
 
         <Button
             android:id="@+id/btn_add"
@@ -116,16 +95,7 @@
             android:textColor="@color/white"
             android:textSize="17dp" />
 
-        <Button
-            android:id="@+id/view_btn"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:layout_margin="10dp"
-            android:backgroundTint="@color/darkGreen"
-            android:paddingLeft="5dp"
-            android:text="veiw to damaged items"
-            android:textColor="@color/white"
-            android:textSize="17dp" />
+
 
     </LinearLayout>
 </LinearLayout>

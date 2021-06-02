@@ -23,19 +23,24 @@ import com.ez_store.ez_store.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Update_Info_Activity extends AppCompatActivity {
 
 
-    String name , image , description , quantity , price , date;
+    String name , id , image , description , quantity , price , date;
 
     EditText item_name , item_description , item_quantity , item_price , item_date;
     ImageView back , item_image;
@@ -54,7 +59,7 @@ public class Update_Info_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_update__info_);
 
         name = getIntent().getStringExtra("Name");
-        //id = getIntent().getStringExtra("ID");
+        id = getIntent().getStringExtra("ID");
         description = getIntent().getStringExtra("Description");
         image = getIntent().getStringExtra("Image");
         quantity = getIntent().getStringExtra("Quantity");
@@ -95,7 +100,7 @@ public class Update_Info_Activity extends AppCompatActivity {
             public void onClick(View view) {
                 FirebaseAuth auth = FirebaseAuth.getInstance();
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Person")
-                        .child(auth.getCurrentUser().getUid()).child("Products").child("Person");
+                        .child(auth.getCurrentUser().getUid()).child("Products").child(id);
 
                 if(item_name.getText().toString().isEmpty() == false)
                 {
@@ -115,12 +120,28 @@ public class Update_Info_Activity extends AppCompatActivity {
                 }
                 if(item_date.getText().toString().isEmpty() == false)
                 {
-                    reference.child("date").setValue(Double.parseDouble(item_price.getText().toString().trim()));
+                    try {
+                        reference.child("date").setValue(new SimpleDateFormat("dd/MM/yyyy").parse(item_price.getText().toString().trim()));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
                 }
-                if(item_image != null)
-                {
-                    setImage(ImgUri , reference);
-                }
+
+                reference.child("imgUri").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(image != snapshot.getValue(String.class))
+                        {
+                            setImage(ImgUri , snapshot , reference);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
 
             }
         });
@@ -150,7 +171,7 @@ public class Update_Info_Activity extends AppCompatActivity {
         }
     }
 
-    private void setImage(Uri imgUri, DatabaseReference reference) {
+    private void setImage(Uri imgUri, DataSnapshot snapshot, DatabaseReference reference) {
 
         ContentResolver cr = Update_Info_Activity.this.getContentResolver();
         MimeTypeMap map = MimeTypeMap.getSingleton();
@@ -163,13 +184,12 @@ public class Update_Info_Activity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
                         try {
-                            if(item_image != null) {
-                                StorageReference storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(item_image.toString().replace(",", "."));
-                                storageReference.delete();
-                            }
+                            StorageReference storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(snapshot.getValue(String.class).replace(",", "."));
+                            storageReference.delete();
 
 
                             reference.child("imgUri").setValue(uri.toString().replace("." , ","));
+
                             loadingDialog.dismiss();
                         } catch (Exception ex) {
                             Toast.makeText(Update_Info_Activity.this, ex.getMessage(), Toast.LENGTH_SHORT).show();

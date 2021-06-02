@@ -1,5 +1,6 @@
 package com.ez_store.ez_store.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,8 +18,11 @@ import com.ez_store.ez_store.Model.LoadingDialog;
 import com.ez_store.ez_store.Model.Product;
 import com.ez_store.ez_store.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -27,13 +31,11 @@ import com.journeyapps.barcodescanner.CaptureActivity;
 
 
 public class Damaged_Items extends AppCompatActivity implements View.OnClickListener {
-    private Button scan , add_btn , view_btn;
-    private EditText id , name , quantity , date;
+    private Button scan , add_btn ;
+    private EditText id , quantity ;
 
-    private String _name;
     private String _id;
     private String _quantity ;
-    private String _date;
     private String userID;
 
     FirebaseDatabase firebaseDatabase;
@@ -57,13 +59,14 @@ public class Damaged_Items extends AppCompatActivity implements View.OnClickList
         connection = new Connection(Damaged_Items.this);
         loadingDialog = new LoadingDialog(Damaged_Items.this);
         storageReference = FirebaseStorage.getInstance().getReference();
-
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
         scan = findViewById(R.id.barcode_icon);
         id = findViewById(R.id.barcode_view);
-        quantity = findViewById(R.id.quantity_item);
-        date = findViewById(R.id.id_date);
+        quantity = findViewById(R.id.id_quantity);
+
         add_btn = findViewById(R.id.btn_add);
-        view_btn = findViewById(R.id.view_btn);
+
 
         scan.setOnClickListener(this);
 
@@ -73,31 +76,33 @@ public class Damaged_Items extends AppCompatActivity implements View.OnClickList
             @Override
             public void onClick(View view) {
 
-                _name = name.getText().toString().trim();
+
                 _id = id.getText().toString().trim();
                 _quantity = quantity.getText().toString().trim();
-                _date = date.getText().toString().trim();
 
-                Product Product = new Product(_id , _name , _quantity , _date);
-                databaseReference.child(userID).child("Products").child(_id).setValue(Product);
+
+
+                databaseReference.child(userID).child("Products").child(_id).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        int Q = snapshot.child("quantity").getValue(Integer.class);
+                        databaseReference.child(userID).child("Products").child(_id).child("quantity").setValue(Q-(Integer.parseInt(_quantity)));
+                        databaseReference.child(userID).child("Products").child("DamagedItems").child(_id).child("id").setValue(_id);
+                        databaseReference.child(userID).child("Products").child("DamagedItems").child(_id).child("quantity").setValue(Integer.parseInt(_quantity));
+                    }
+                    
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
             }
         });
-//-------------------- Add Button ------------------------------------------------------------------
-        view_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //viewDamagedItems();
-            }
-        });
+
+
     }
 
-    /*private void AddDamagedItems(){
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Person");
-        reference.child(auth.getCurrentUser().getUid()).child("Products").child(String.valueOf(Integer.parseInt(id.getText().toString().trim())));
-        reference.child(auth.getCurrentUser().getUid()).child("Products").child(String.valueOf(Integer.parseInt(quantity.getText().toString().trim())));
-        reference.child(auth.getCurrentUser().getUid()).child("Products").child(String.valueOf(Integer.parseInt(date.getText().toString().trim())));
-    }*/
 
 
     //------------------------------------------- Scan Code ----------------------------------------
